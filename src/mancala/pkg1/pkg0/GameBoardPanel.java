@@ -32,18 +32,20 @@ public class GameBoardPanel extends javax.swing.JPanel {
         rightBankPanel = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         pocketsPanel = new javax.swing.JPanel();
+        playerTwoPocketsPanel = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        playerOnePocketsPanel = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -61,43 +63,51 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
         add(rightBankPanel, java.awt.BorderLayout.LINE_END);
 
-        pocketsPanel.setLayout(new java.awt.GridLayout(2, 6));
+        pocketsPanel.setLayout(new java.awt.GridLayout(2, 1));
+
+        playerTwoPocketsPanel.setLayout(new java.awt.GridLayout());
 
         jButton3.setText("jButton3");
-        pocketsPanel.add(jButton3);
+        playerTwoPocketsPanel.add(jButton3);
 
         jButton4.setText("jButton4");
-        pocketsPanel.add(jButton4);
+        playerTwoPocketsPanel.add(jButton4);
 
         jButton5.setText("jButton5");
-        pocketsPanel.add(jButton5);
+        playerTwoPocketsPanel.add(jButton5);
 
         jButton6.setText("jButton6");
-        pocketsPanel.add(jButton6);
+        playerTwoPocketsPanel.add(jButton6);
 
         jButton7.setText("jButton7");
-        pocketsPanel.add(jButton7);
+        playerTwoPocketsPanel.add(jButton7);
 
         jButton8.setText("jButton8");
-        pocketsPanel.add(jButton8);
+        playerTwoPocketsPanel.add(jButton8);
+
+        pocketsPanel.add(playerTwoPocketsPanel);
+
+        playerOnePocketsPanel.setLayout(new java.awt.GridLayout());
 
         jButton9.setText("jButton9");
-        pocketsPanel.add(jButton9);
-
-        jButton10.setText("jButton10");
-        pocketsPanel.add(jButton10);
-
-        jButton11.setText("jButton11");
-        pocketsPanel.add(jButton11);
-
-        jButton12.setText("jButton12");
-        pocketsPanel.add(jButton12);
+        playerOnePocketsPanel.add(jButton9);
 
         jButton13.setText("jButton13");
-        pocketsPanel.add(jButton13);
+        playerOnePocketsPanel.add(jButton13);
+
+        jButton12.setText("jButton12");
+        playerOnePocketsPanel.add(jButton12);
+
+        jButton10.setText("jButton10");
+        playerOnePocketsPanel.add(jButton10);
 
         jButton14.setText("jButton14");
-        pocketsPanel.add(jButton14);
+        playerOnePocketsPanel.add(jButton14);
+
+        jButton11.setText("jButton11");
+        playerOnePocketsPanel.add(jButton11);
+
+        pocketsPanel.add(playerOnePocketsPanel);
 
         add(pocketsPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -119,6 +129,8 @@ public class GameBoardPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel leftBankPanel;
+    private javax.swing.JPanel playerOnePocketsPanel;
+    private javax.swing.JPanel playerTwoPocketsPanel;
     private javax.swing.JPanel pocketsPanel;
     private javax.swing.JPanel rightBankPanel;
     // End of variables declaration//GEN-END:variables
