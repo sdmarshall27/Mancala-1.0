@@ -7,8 +7,8 @@ package mancala.pkg1.pkg0;
 
 /**
  *
- * @author steven
+ * @author Dung T Nguyen
  */
-public class Stones {
+public class Slot {
     
 }
