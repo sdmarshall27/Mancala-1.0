@@ -27,6 +27,9 @@ public class GameBoardPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         leftBankPanel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         rightBankPanel = new javax.swing.JPanel();
@@ -47,6 +50,12 @@ public class GameBoardPanel extends javax.swing.JPanel {
         jButton14 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
 
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
         setLayout(new java.awt.BorderLayout());
 
         leftBankPanel.setLayout(new java.awt.GridLayout());
@@ -59,6 +68,11 @@ public class GameBoardPanel extends javax.swing.JPanel {
         rightBankPanel.setLayout(new java.awt.GridLayout());
 
         jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         rightBankPanel.add(jButton2);
 
         add(rightBankPanel, java.awt.BorderLayout.LINE_END);
@@ -112,6 +126,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
         add(pocketsPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -128,6 +146,9 @@ public class GameBoardPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel leftBankPanel;
     private javax.swing.JPanel playerOnePocketsPanel;
     private javax.swing.JPanel playerTwoPocketsPanel;
