@@ -27,9 +27,6 @@ public class GameBoardPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
         leftBankPanel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         rightBankPanel = new javax.swing.JPanel();
@@ -50,23 +47,19 @@ public class GameBoardPanel extends javax.swing.JPanel {
         jButton14 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
         setLayout(new java.awt.BorderLayout());
 
-        leftBankPanel.setLayout(new java.awt.GridLayout());
+        leftBankPanel.setLayout(new java.awt.GridLayout(1, 0));
 
+        jButton1.setBackground(new java.awt.Color(255, 204, 204));
         jButton1.setText("jButton1");
         leftBankPanel.add(jButton1);
 
         add(leftBankPanel, java.awt.BorderLayout.LINE_START);
 
-        rightBankPanel.setLayout(new java.awt.GridLayout());
+        rightBankPanel.setLayout(new java.awt.GridLayout(1, 0));
 
+        jButton2.setBackground(new java.awt.Color(204, 255, 255));
         jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,45 +72,62 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
         pocketsPanel.setLayout(new java.awt.GridLayout(2, 1));
 
-        playerTwoPocketsPanel.setLayout(new java.awt.GridLayout());
+        playerTwoPocketsPanel.setLayout(new java.awt.GridLayout(1, 0));
 
+        jButton3.setBackground(new java.awt.Color(255, 204, 204));
         jButton3.setText("jButton3");
         playerTwoPocketsPanel.add(jButton3);
 
+        jButton4.setBackground(new java.awt.Color(255, 204, 204));
         jButton4.setText("jButton4");
         playerTwoPocketsPanel.add(jButton4);
 
+        jButton5.setBackground(new java.awt.Color(255, 204, 204));
         jButton5.setText("jButton5");
         playerTwoPocketsPanel.add(jButton5);
 
+        jButton6.setBackground(new java.awt.Color(255, 204, 204));
         jButton6.setText("jButton6");
         playerTwoPocketsPanel.add(jButton6);
 
+        jButton7.setBackground(new java.awt.Color(255, 204, 204));
         jButton7.setText("jButton7");
         playerTwoPocketsPanel.add(jButton7);
 
+        jButton8.setBackground(new java.awt.Color(255, 204, 204));
         jButton8.setText("jButton8");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         playerTwoPocketsPanel.add(jButton8);
 
         pocketsPanel.add(playerTwoPocketsPanel);
 
-        playerOnePocketsPanel.setLayout(new java.awt.GridLayout());
+        playerOnePocketsPanel.setLayout(new java.awt.GridLayout(1, 0));
 
+        jButton9.setBackground(new java.awt.Color(204, 255, 255));
         jButton9.setText("jButton9");
         playerOnePocketsPanel.add(jButton9);
 
+        jButton13.setBackground(new java.awt.Color(204, 255, 255));
         jButton13.setText("jButton13");
         playerOnePocketsPanel.add(jButton13);
 
+        jButton12.setBackground(new java.awt.Color(204, 255, 255));
         jButton12.setText("jButton12");
         playerOnePocketsPanel.add(jButton12);
 
+        jButton10.setBackground(new java.awt.Color(204, 255, 255));
         jButton10.setText("jButton10");
         playerOnePocketsPanel.add(jButton10);
 
+        jButton14.setBackground(new java.awt.Color(204, 255, 255));
         jButton14.setText("jButton14");
         playerOnePocketsPanel.add(jButton14);
 
+        jButton11.setBackground(new java.awt.Color(204, 255, 255));
         jButton11.setText("jButton11");
         playerOnePocketsPanel.add(jButton11);
 
@@ -129,6 +139,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -146,9 +160,6 @@ public class GameBoardPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel leftBankPanel;
     private javax.swing.JPanel playerOnePocketsPanel;
     private javax.swing.JPanel playerTwoPocketsPanel;
