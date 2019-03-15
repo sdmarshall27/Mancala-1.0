@@ -28,9 +28,9 @@ public class GameBoardPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         leftBankPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        playerTwoBank = new javax.swing.JButton();
         rightBankPanel = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        playerOneBank = new javax.swing.JButton();
         pocketsPanel = new javax.swing.JPanel();
         playerTwoPocketsPanel = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
@@ -51,22 +51,22 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
         leftBankPanel.setLayout(new java.awt.GridLayout(1, 0));
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 204));
-        jButton1.setText("jButton1");
-        leftBankPanel.add(jButton1);
+        playerTwoBank.setBackground(new java.awt.Color(255, 204, 204));
+        playerTwoBank.setText("jButton1");
+        leftBankPanel.add(playerTwoBank);
 
         add(leftBankPanel, java.awt.BorderLayout.LINE_START);
 
         rightBankPanel.setLayout(new java.awt.GridLayout(1, 0));
 
-        jButton2.setBackground(new java.awt.Color(204, 255, 255));
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        playerOneBank.setBackground(new java.awt.Color(204, 255, 255));
+        playerOneBank.setText("jButton2");
+        playerOneBank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                playerOneBankActionPerformed(evt);
             }
         });
-        rightBankPanel.add(jButton2);
+        rightBankPanel.add(playerOneBank);
 
         add(rightBankPanel, java.awt.BorderLayout.LINE_END);
 
@@ -129,6 +129,11 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
         jButton11.setBackground(new java.awt.Color(204, 255, 255));
         jButton11.setText("jButton11");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
         playerOnePocketsPanel.add(jButton11);
 
         pocketsPanel.add(playerOnePocketsPanel);
@@ -136,23 +141,25 @@ public class GameBoardPanel extends javax.swing.JPanel {
         add(pocketsPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void playerOneBankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneBankActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_playerOneBankActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -161,7 +168,9 @@ public class GameBoardPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel leftBankPanel;
+    private javax.swing.JButton playerOneBank;
     private javax.swing.JPanel playerOnePocketsPanel;
+    private javax.swing.JButton playerTwoBank;
     private javax.swing.JPanel playerTwoPocketsPanel;
     private javax.swing.JPanel pocketsPanel;
     private javax.swing.JPanel rightBankPanel;
