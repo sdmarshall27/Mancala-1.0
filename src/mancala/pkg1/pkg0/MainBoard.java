@@ -6,6 +6,8 @@
 package mancala.pkg1.pkg0;
 
 import java.awt.BorderLayout;
+import mancala.pkg1.pkg0.Game;
+import mancala.pkg1.pkg0.MancalaGame;
 
 /**
  *
@@ -23,6 +25,7 @@ public class MainBoard extends javax.swing.JFrame {
         this.mancalaGame.start();
         this.mainMenu.setMainBoard(this);
         this.getContentPane().add(this.mainMenu, BorderLayout.CENTER);
+        this.setSize(700, 500);
     }
     
     public MancalaGame getMancalaGame(){
@@ -58,10 +61,7 @@ public class MainBoard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainMenuPanel1 = new mancala.pkg1.pkg0.MainMenuPanel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().add(mainMenuPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -92,7 +92,6 @@ public class MainBoard extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -104,6 +103,5 @@ public class MainBoard extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private mancala.pkg1.pkg0.MainMenuPanel mainMenuPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,8 @@
  */
 package mancala.pkg1.pkg0;
 
+import mancala.pkg1.pkg0.MainBoard;
+
 /**
  *
  * @author Dung T Nguyen
@@ -34,7 +36,6 @@ public class MainMenuPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         playGameButton = new javax.swing.JButton();
         howToPlayButton = new javax.swing.JButton();
@@ -69,19 +70,6 @@ public class MainMenuPanel extends javax.swing.JPanel {
         );
 
         add(jPanel2, java.awt.BorderLayout.PAGE_START);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        add(jPanel3, java.awt.BorderLayout.PAGE_END);
 
         playGameButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playGameButton.setText("Play Game");
@@ -148,7 +136,6 @@ public class MainMenuPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton playGameButton;
     // End of variables declaration//GEN-END:variables
