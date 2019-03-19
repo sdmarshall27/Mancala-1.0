@@ -5,7 +5,7 @@
  */
 package mancala.pkg1.pkg0;
 
-import mancala.pkg1.pkg0.MainBoard;
+import mancala.pkg1.pkg0.MainFrame;
 
 /**
  *
@@ -13,14 +13,14 @@ import mancala.pkg1.pkg0.MainBoard;
  */
 public class MainMenuPanel extends javax.swing.JPanel {
 
-    private MainBoard mainBoard;
+    private MainFrame mainBoard;
     
     public MainMenuPanel() {
         initComponents();
         
     }
     
-    public void setMainBoard(MainBoard mainBoard){
+    public void setMainBoard(MainFrame mainBoard){
         this.mainBoard = mainBoard;
     }
 
@@ -33,43 +33,34 @@ public class MainMenuPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        menuTitlePanel = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        menuButtonsPanel = new javax.swing.JPanel();
         playGameButton = new javax.swing.JButton();
         howToPlayButton = new javax.swing.JButton();
+        optionsButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
 
         setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("The Mancala Effect");
+        titleLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleLabel.setText("The Mancala Effect");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
+        javax.swing.GroupLayout menuTitlePanelLayout = new javax.swing.GroupLayout(menuTitlePanel);
+        menuTitlePanel.setLayout(menuTitlePanelLayout);
+        menuTitlePanelLayout.setHorizontalGroup(
+            menuTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+        menuTitlePanelLayout.setVerticalGroup(
+            menuTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
         );
 
-        add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        add(menuTitlePanel, java.awt.BorderLayout.PAGE_START);
+
+        menuButtonsPanel.setLayout(new java.awt.GridLayout(4, 1));
 
         playGameButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playGameButton.setText("Play Game");
@@ -78,6 +69,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
                 playGameButtonActionPerformed(evt);
             }
         });
+        menuButtonsPanel.add(playGameButton);
 
         howToPlayButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         howToPlayButton.setText("How To Play");
@@ -86,6 +78,11 @@ public class MainMenuPanel extends javax.swing.JPanel {
                 howToPlayButtonActionPerformed(evt);
             }
         });
+        menuButtonsPanel.add(howToPlayButton);
+
+        optionsButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        optionsButton.setText("Options");
+        menuButtonsPanel.add(optionsButton);
 
         exitButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         exitButton.setText("Exit");
@@ -94,27 +91,9 @@ public class MainMenuPanel extends javax.swing.JPanel {
                 exitButtonActionPerformed(evt);
             }
         });
+        menuButtonsPanel.add(exitButton);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(playGameButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(howToPlayButton, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
-            .addComponent(exitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(playGameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(howToPlayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        add(jPanel4, java.awt.BorderLayout.CENTER);
+        add(menuButtonsPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void playGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playGameButtonActionPerformed
@@ -133,11 +112,11 @@ public class MainMenuPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exitButton;
     private javax.swing.JButton howToPlayButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel menuButtonsPanel;
+    private javax.swing.JPanel menuTitlePanel;
+    private javax.swing.JButton optionsButton;
     private javax.swing.JButton playGameButton;
+    private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 
 

@@ -11,7 +11,7 @@ package mancala.pkg1.pkg0;
  */
 public class Game extends javax.swing.JPanel {
 
-    private MainBoard mainBoard;
+    private MainFrame mainBoard;
     private MancalaGame mancalaGame;
     private int scoreP1;
     private int scoreP2;
@@ -22,7 +22,7 @@ public class Game extends javax.swing.JPanel {
         initComponents();
     }
     
-    public void setMainBoard(MainBoard mainBoard)
+    public void setMainBoard(MainFrame mainBoard)
     {
         this.mainBoard = mainBoard;
         
