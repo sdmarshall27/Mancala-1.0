@@ -14,10 +14,12 @@ import mancala.pkg1.pkg0.MainFrame;
 public class MainMenuPanel extends javax.swing.JPanel {
 
     private MainFrame mainFrame;
+    private GameSettings gameSettings;
     
     public MainMenuPanel(MainFrame mainFrame) {
         initComponents();
         this.mainFrame = mainFrame;
+        gameSettings = GameSettings.getInstance();
     }
     
     public void setMainFrame(MainFrame mainFrame){
@@ -41,6 +43,13 @@ public class MainMenuPanel extends javax.swing.JPanel {
         applicationInfoPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        optionsDialog = new javax.swing.JDialog();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        playerMoveSettingComboBox = new javax.swing.JComboBox<>();
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         menuTitlePanel = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
         menuButtonsPanel = new javax.swing.JPanel();
@@ -57,7 +66,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
         jPanel1.setLayout(new java.awt.GridLayout(2, 1));
 
         rulesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "RULES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
-        rulesPanel.setLayout(new java.awt.GridLayout());
+        rulesPanel.setLayout(new java.awt.GridLayout(1, 0));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -73,7 +82,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
         jPanel1.add(rulesPanel);
 
         applicationInfoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "About", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
-        applicationInfoPanel.setLayout(new java.awt.GridLayout());
+        applicationInfoPanel.setLayout(new java.awt.GridLayout(1, 0));
 
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
@@ -89,6 +98,34 @@ public class MainMenuPanel extends javax.swing.JPanel {
         jPanel1.add(applicationInfoPanel);
 
         aboutMancalaDialog.getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        optionsDialog.setTitle("Options");
+        optionsDialog.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        optionsDialog.setResizable(false);
+        optionsDialog.setSize(500, 100);
+        optionsDialog.getContentPane().setLayout(new java.awt.GridLayout(3, 0));
+        optionsDialog.getContentPane().add(filler1);
+
+        jPanel2.setLayout(new java.awt.GridLayout());
+
+        jPanel3.setLayout(new java.awt.GridLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Set who goes first:");
+        jPanel3.add(jLabel1);
+
+        playerMoveSettingComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Random", "Player 1", "Player 2" }));
+        playerMoveSettingComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerMoveSettingComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel3.add(playerMoveSettingComboBox);
+
+        jPanel2.add(jPanel3);
+
+        optionsDialog.getContentPane().add(jPanel2);
+        optionsDialog.getContentPane().add(filler2);
 
         setLayout(new java.awt.BorderLayout());
 
@@ -131,6 +168,11 @@ public class MainMenuPanel extends javax.swing.JPanel {
 
         optionsButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         optionsButton.setText("Options");
+        optionsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionsButtonActionPerformed(evt);
+            }
+        });
         menuButtonsPanel.add(optionsButton);
 
         exitButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -157,13 +199,43 @@ public class MainMenuPanel extends javax.swing.JPanel {
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
 
+    private void optionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsButtonActionPerformed
+        optionsDialog.setVisible(true);
+    }//GEN-LAST:event_optionsButtonActionPerformed
+
+    private void playerMoveSettingComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerMoveSettingComboBoxActionPerformed
+        String choice = playerMoveSettingComboBox.getSelectedItem().toString();
+
+        switch(choice) {
+            case "Random" : {
+                gameSettings.setDoRandomGame(true);
+                break;
+            }
+            case "Player 1" : {
+                gameSettings.setDoRandomGame(false);
+                gameSettings.setFirstMove(true);
+                break;
+            }
+            case "Player 2" : {
+                gameSettings.setDoRandomGame(false);
+                gameSettings.setFirstMove(false);
+                break;
+            }
+        }
+    }//GEN-LAST:event_playerMoveSettingComboBoxActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aboutMancalaButton;
     private javax.swing.JDialog aboutMancalaDialog;
     private javax.swing.JPanel applicationInfoPanel;
     private javax.swing.JButton exitButton;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
@@ -171,7 +243,9 @@ public class MainMenuPanel extends javax.swing.JPanel {
     private javax.swing.JPanel menuButtonsPanel;
     private javax.swing.JPanel menuTitlePanel;
     private javax.swing.JButton optionsButton;
+    private javax.swing.JDialog optionsDialog;
     private javax.swing.JButton playGameButton;
+    private javax.swing.JComboBox<String> playerMoveSettingComboBox;
     private javax.swing.JPanel rulesPanel;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables

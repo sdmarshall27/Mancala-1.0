@@ -49,18 +49,20 @@ public class Player {
             Stone stone = new Stone();
             tempSlot.addStone(stone);
         }
-        if(this.slots.get(position).countStones() != 0){
+        if(this.slots.get(position).countStones() != 0) {
             slot.cleanStones();
             for (int i = 0; i < tempSlot.countStones(); i++){
-                if(position < 6){
+                if(position < 6) {
                     position++;
                     addStoneToSlot(position, tempSlot.getStoneByIndex(i));
                     setBonusTurn(i, tempSlot.countStones(), position);
-                } else if(position == 6) {
+                } 
+                else if(position == 6) {
                     if(opponentPosition < 6){
                         opponent.addStoneToSlot(opponentPosition, tempSlot.getStoneByIndex(i));
                         opponentPosition++;
-                    } else if(opponentPosition == 6) {
+                    } 
+                    else if(opponentPosition == 6) {
                         position = 0;
                         addStoneToSlot(position, tempSlot.getStoneByIndex(i));
                     }    
