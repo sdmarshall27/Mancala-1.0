@@ -33,6 +33,14 @@ public class MainMenuPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        aboutMancalaDialog = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        rulesPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        applicationInfoPanel = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         menuTitlePanel = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
         menuButtonsPanel = new javax.swing.JPanel();
@@ -40,6 +48,49 @@ public class MainMenuPanel extends javax.swing.JPanel {
         aboutMancalaButton = new javax.swing.JButton();
         optionsButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
+
+        aboutMancalaDialog.setTitle("About THE MANCALA EFFECT");
+        aboutMancalaDialog.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        aboutMancalaDialog.setResizable(false);
+        aboutMancalaDialog.setSize(500, 400);
+
+        jPanel1.setLayout(new java.awt.GridLayout(2, 1));
+
+        rulesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "RULES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        rulesPanel.setLayout(new java.awt.GridLayout());
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Mancala is one of the oldest games still played today. Click on one of the pockets to move rocks counterclockwise throughout the board. If the rocks end in your bank, you get another turn. If the last rock is placed in an empty pocket on your side, you get to steal the rocks in the slot across from it. Go forth and save the world through the power of Mancala!");
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setFocusable(false);
+        jTextArea1.setHighlighter(null);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        rulesPanel.add(jScrollPane1);
+
+        jPanel1.add(rulesPanel);
+
+        applicationInfoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "About", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        applicationInfoPanel.setLayout(new java.awt.GridLayout());
+
+        jTextArea2.setEditable(false);
+        jTextArea2.setColumns(20);
+        jTextArea2.setLineWrap(true);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("The Mancala Effect v1.0\n\nDeveloped By:\n\nus");
+        jTextArea2.setWrapStyleWord(true);
+        jTextArea2.setFocusable(false);
+        jTextArea2.setHighlighter(null);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        applicationInfoPanel.add(jScrollPane2);
+
+        jPanel1.add(applicationInfoPanel);
+
+        aboutMancalaDialog.getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         setLayout(new java.awt.BorderLayout());
 
@@ -51,7 +102,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
         menuTitlePanel.setLayout(menuTitlePanelLayout);
         menuTitlePanelLayout.setHorizontalGroup(
             menuTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1234, Short.MAX_VALUE)
+            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
         );
         menuTitlePanelLayout.setVerticalGroup(
             menuTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +152,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_playGameButtonActionPerformed
 
     private void aboutMancalaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMancalaButtonActionPerformed
-        // TODO add your handling code here:
+        aboutMancalaDialog.setVisible(true);
     }//GEN-LAST:event_aboutMancalaButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -111,11 +162,19 @@ public class MainMenuPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aboutMancalaButton;
+    private javax.swing.JDialog aboutMancalaDialog;
+    private javax.swing.JPanel applicationInfoPanel;
     private javax.swing.JButton exitButton;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JPanel menuButtonsPanel;
     private javax.swing.JPanel menuTitlePanel;
     private javax.swing.JButton optionsButton;
     private javax.swing.JButton playGameButton;
+    private javax.swing.JPanel rulesPanel;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 

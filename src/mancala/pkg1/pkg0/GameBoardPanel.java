@@ -152,7 +152,7 @@ public class GameBoardPanel extends javax.swing.JPanel {
         p2PickButton2 = new javax.swing.JButton();
         p2PickButton1 = new javax.swing.JButton();
         p2PickButton0 = new javax.swing.JButton();
-        playerButtonsSpacerPanel = new javax.swing.JPanel();
+        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         playerOneButtonsPanel = new javax.swing.JPanel();
         p1PickButton0 = new javax.swing.JButton();
         p1PickButton1 = new javax.swing.JButton();
@@ -161,7 +161,7 @@ public class GameBoardPanel extends javax.swing.JPanel {
         p1PickButton4 = new javax.swing.JButton();
         p1PickButton5 = new javax.swing.JButton();
         gameActionPanel = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         jPanel2 = new javax.swing.JPanel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         newGameButton = new javax.swing.JButton();
@@ -299,19 +299,7 @@ public class GameBoardPanel extends javax.swing.JPanel {
         playerTwoButtonsPanel.add(p2PickButton0);
 
         playerSlots.add(playerTwoButtonsPanel);
-
-        javax.swing.GroupLayout playerButtonsSpacerPanelLayout = new javax.swing.GroupLayout(playerButtonsSpacerPanel);
-        playerButtonsSpacerPanel.setLayout(playerButtonsSpacerPanelLayout);
-        playerButtonsSpacerPanelLayout.setHorizontalGroup(
-            playerButtonsSpacerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
-        );
-        playerButtonsSpacerPanelLayout.setVerticalGroup(
-            playerButtonsSpacerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 86, Short.MAX_VALUE)
-        );
-
-        playerSlots.add(playerButtonsSpacerPanel);
+        playerSlots.add(filler3);
 
         playerOneButtonsPanel.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -376,19 +364,7 @@ public class GameBoardPanel extends javax.swing.JPanel {
         gameActionPanel.setMinimumSize(new java.awt.Dimension(0, 126));
         gameActionPanel.setPreferredSize(new java.awt.Dimension(872, 126));
         gameActionPanel.setLayout(new java.awt.GridLayout(2, 0));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 63, Short.MAX_VALUE)
-        );
-
-        gameActionPanel.add(jPanel1);
+        gameActionPanel.add(filler4);
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -612,9 +588,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
     private javax.swing.JButton exitButton;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
+    private javax.swing.Box.Filler filler3;
+    private javax.swing.Box.Filler filler4;
     private javax.swing.JPanel gameActionPanel;
     private javax.swing.JPanel headsUpDisplayPanel;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton mainMenuButton;
     private javax.swing.JButton newGameButton;
@@ -632,7 +609,6 @@ public class GameBoardPanel extends javax.swing.JPanel {
     private javax.swing.JButton p2PickButton4;
     private javax.swing.JButton p2PickButton5;
     private javax.swing.JLabel p2Slot6;
-    private javax.swing.JPanel playerButtonsSpacerPanel;
     private javax.swing.JPanel playerOneBank;
     private javax.swing.JPanel playerOneButtonsPanel;
     private javax.swing.JLabel playerOneScoreLabel;
