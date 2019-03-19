@@ -14,39 +14,32 @@ import mancala.pkg1.pkg0.MancalaGame;
  * @author Dung T Nguyen
  */
 public class MainFrame extends javax.swing.JFrame {
-    private MancalaGame mancalaGame;
     private MainMenuPanel mainMenu;
     private GameBoardPanel game;
     
     public MainFrame() {
         initComponents();
-        this.mancalaGame = new MancalaGame();
-        this.mainMenu = new MainMenuPanel();
-        this.mancalaGame.start();
-        this.mainMenu.setMainBoard(this);
-        this.getContentPane().add(this.mainMenu, BorderLayout.CENTER);
+        setMainMenu();
         this.setSize(700, 500);
     }
-    
-    public MancalaGame getMancalaGame(){
-        return this.mancalaGame;
+       
+    public void setMainMenu() {
+        this.mainMenu = new MainMenuPanel(this);
+        this.getContentPane().add(this.mainMenu, BorderLayout.CENTER);
+        this.validate();
+        this.repaint();
     }
     
-    public void gameConstructor(){
-        this.game = new GameBoardPanel();
-        this.game.setMainBoard(this);
-        this.game.setMancalaGame(mancalaGame);
-        this.game.updateStonesForPlayerOne();
-        this.game.updateStonesForPlayerTwo();
-        this.game.updateP1Score();
-        this.game.updateP2Score();
-        this.game.updateButtonsP1(true);
-        this.game.updateButtonsP2(false);
-    }
+//    public void gameConstructor(){
+//        this.game.updateStonesForPlayerOne();
+//        this.game.updateStonesForPlayerTwo();
+//        this.game.updatePlayerOneButtonState(true);
+//        this.game.updatePlayerTwoButtonState(false);
+//    }
     
     public void playGame(){
         this.getContentPane().remove(this.mainMenu);
-        gameConstructor();
+        this.game = new GameBoardPanel(this);
         this.getContentPane().add(this.game, BorderLayout.CENTER);
         this.validate();
         this.repaint();

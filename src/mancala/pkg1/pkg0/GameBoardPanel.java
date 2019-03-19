@@ -13,33 +13,29 @@ import java.awt.Color;
  */
 public class GameBoardPanel extends javax.swing.JPanel {
 
-    private MainFrame mainBoard;
+    private MainFrame mainFrame;
     private MancalaGame mancalaGame;
     private int scoreP1;
     private int scoreP2;
     
-    private GameSettings gameSettings = GameSettings.getInstance();
+    private final GameSettings gameSettings = GameSettings.getInstance();
 
     
-    public GameBoardPanel() 
+    public GameBoardPanel(MainFrame mainFrame) 
     {
         initComponents();
-        updatePlayerColors();
+        this.mainFrame = mainFrame;
+        mancalaGame = new MancalaGame();
+        initializeDisplay();
     }
     
-    public void setMainBoard(MainFrame mainBoard)
+    public void setMainFrame(MainFrame mainFrame)
     {
-        this.mainBoard = mainBoard;
+        this.mainFrame = mainFrame;
         
     }
     
-    public void setMancalaGame(MancalaGame mancalaGame)
-    {
-        this.mancalaGame = mancalaGame;
-    }
-    
-    
-    public Boolean getWinner(){
+    public Boolean displayWinner(){
         Boolean success = false;
         if(mancalaGame.getPlayerOne().getEndGame() || mancalaGame.getPlayerTwo().getEndGame()){
             success = true;
@@ -54,29 +50,29 @@ public class GameBoardPanel extends javax.swing.JPanel {
                 this.winnerLabel.setText("Draw Game");
             }
             
-            updateButtonsP1(false);
-            updateButtonsP2(false);            
+            updatePlayerOneButtonState(false);
+            updatePlayerTwoButtonState(false);            
         }
         return success;
     }
     
     
-    public void updateButtonsP1(Boolean success){
-        this.p1PickButton0.setEnabled(success);
-        this.p1PickButton1.setEnabled(success);
-        this.p1PickButton2.setEnabled(success);
-        this.p1PickButton3.setEnabled(success);
-        this.p1PickButton4.setEnabled(success);
-        this.p1PickButton5.setEnabled(success);
+    public void updatePlayerOneButtonState(Boolean isEnabled){
+        this.p1PickButton0.setEnabled(isEnabled);
+        this.p1PickButton1.setEnabled(isEnabled);
+        this.p1PickButton2.setEnabled(isEnabled);
+        this.p1PickButton3.setEnabled(isEnabled);
+        this.p1PickButton4.setEnabled(isEnabled);
+        this.p1PickButton5.setEnabled(isEnabled);
     }
     
-    public void updateButtonsP2(Boolean success){
-        this.p2PickButton0.setEnabled(success);
-        this.p2PickButton1.setEnabled(success);
-        this.p2PickButton2.setEnabled(success);
-        this.p2PickButton3.setEnabled(success);
-        this.p2PickButton4.setEnabled(success);
-        this.p2PickButton5.setEnabled(success);
+    public void updatePlayerTwoButtonState(Boolean isEnabled){
+        this.p2PickButton0.setEnabled(isEnabled);
+        this.p2PickButton1.setEnabled(isEnabled);
+        this.p2PickButton2.setEnabled(isEnabled);
+        this.p2PickButton3.setEnabled(isEnabled);
+        this.p2PickButton4.setEnabled(isEnabled);
+        this.p2PickButton5.setEnabled(isEnabled);
     }
     
     public void updateStonesForPlayerOne(){
@@ -388,6 +384,11 @@ public class GameBoardPanel extends javax.swing.JPanel {
         jPanel2.add(newGameButton);
 
         mainMenuButton.setText("Main Menu");
+        mainMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainMenuButtonActionPerformed(evt);
+            }
+        });
         jPanel2.add(mainMenuButton);
 
         exitButton.setText("Exit");
@@ -406,10 +407,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p1PickButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton0ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(0, mancalaGame.getPlayerOne().slots.get(0));
-        getWinner();
-        if(!getWinner()){
-            updateButtonsP1(mancalaGame.getPlayerOne().getBonusTurn());
-            updateButtonsP2(!mancalaGame.getPlayerOne().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){
+            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -420,10 +421,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p1PickButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton1ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(1, mancalaGame.getPlayerOne().slots.get(1));
-        getWinner();
-        if(!getWinner()){
-            updateButtonsP1(mancalaGame.getPlayerOne().getBonusTurn());
-            updateButtonsP2(!mancalaGame.getPlayerOne().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){
+            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -434,10 +435,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p1PickButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton2ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(2, mancalaGame.getPlayerOne().slots.get(2));
-        getWinner();
-        if(!getWinner()){
-            updateButtonsP1(mancalaGame.getPlayerOne().getBonusTurn());
-            updateButtonsP2(!mancalaGame.getPlayerOne().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){
+            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -448,10 +449,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p1PickButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton3ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(3, mancalaGame.getPlayerOne().slots.get(3));
-        getWinner();
-        if(!getWinner()){
-            updateButtonsP1(mancalaGame.getPlayerOne().getBonusTurn());
-            updateButtonsP2(!mancalaGame.getPlayerOne().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){
+            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -462,10 +463,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p1PickButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton4ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(4, mancalaGame.getPlayerOne().slots.get(4));
-        getWinner();
-        if(!getWinner()){
-            updateButtonsP1(mancalaGame.getPlayerOne().getBonusTurn());
-            updateButtonsP2(!mancalaGame.getPlayerOne().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){
+            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -476,10 +477,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p1PickButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton5ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(5, mancalaGame.getPlayerOne().slots.get(5));
-        getWinner();
-        if(!getWinner()){
-            updateButtonsP1(mancalaGame.getPlayerOne().getBonusTurn());
-            updateButtonsP2(!mancalaGame.getPlayerOne().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){
+            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -490,10 +491,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p2PickButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton0ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(0, mancalaGame.getPlayerTwo().slots.get(0));
-        getWinner();
-        if(!getWinner()){    
-            updateButtonsP1(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updateButtonsP2(mancalaGame.getPlayerTwo().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){    
+            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -504,10 +505,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p2PickButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton1ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(1, mancalaGame.getPlayerTwo().slots.get(1));
-        getWinner();
-        if(!getWinner()){    
-            updateButtonsP1(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updateButtonsP2(mancalaGame.getPlayerTwo().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){    
+            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -518,10 +519,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p2PickButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton3ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(3, mancalaGame.getPlayerTwo().slots.get(3));
-        getWinner();
-        if(!getWinner()){    
-            updateButtonsP1(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updateButtonsP2(mancalaGame.getPlayerTwo().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){    
+            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -532,10 +533,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p2PickButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton4ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(4, mancalaGame.getPlayerTwo().slots.get(4));
-        getWinner();
-        if(!getWinner()){    
-            updateButtonsP1(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updateButtonsP2(mancalaGame.getPlayerTwo().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){    
+            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -546,10 +547,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p2PickButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton5ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(5, mancalaGame.getPlayerTwo().slots.get(5));
-        getWinner();
-        if(!getWinner()){    
-            updateButtonsP1(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updateButtonsP2(mancalaGame.getPlayerTwo().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){    
+            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -560,10 +561,10 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p2PickButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton2ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(2, mancalaGame.getPlayerTwo().slots.get(2));
-        getWinner();
-        if(!getWinner()){
-            updateButtonsP1(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updateButtonsP2(mancalaGame.getPlayerTwo().getBonusTurn());
+        displayWinner();
+        if(!displayWinner()){
+            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
             updateStonesForPlayerOne();
             updateStonesForPlayerTwo();
             updateP1Score();
@@ -575,6 +576,11 @@ public class GameBoardPanel extends javax.swing.JPanel {
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
+
+    private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
+        mainFrame.remove(this);
+        mainFrame.setMainMenu();
+    }//GEN-LAST:event_mainMenuButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -648,5 +654,13 @@ public class GameBoardPanel extends javax.swing.JPanel {
         p1PickButton3.setBackground(playerOneColor);
         p1PickButton4.setBackground(playerOneColor);
         p1PickButton5.setBackground(playerOneColor);
+    }
+    
+    private void initializeDisplay() {
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerColors();
     }
 }

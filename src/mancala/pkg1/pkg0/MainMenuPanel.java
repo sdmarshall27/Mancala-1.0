@@ -13,15 +13,15 @@ import mancala.pkg1.pkg0.MainFrame;
  */
 public class MainMenuPanel extends javax.swing.JPanel {
 
-    private MainFrame mainBoard;
+    private MainFrame mainFrame;
     
-    public MainMenuPanel() {
+    public MainMenuPanel(MainFrame mainFrame) {
         initComponents();
-        
+        this.mainFrame = mainFrame;
     }
     
-    public void setMainBoard(MainFrame mainBoard){
-        this.mainBoard = mainBoard;
+    public void setMainFrame(MainFrame mainFrame){
+        this.mainFrame = mainFrame;
     }
 
     /**
@@ -97,7 +97,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void playGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playGameButtonActionPerformed
-        this.mainBoard.playGame();
+        this.mainFrame.playGame();
     }//GEN-LAST:event_playGameButtonActionPerformed
 
     private void howToPlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_howToPlayButtonActionPerformed
