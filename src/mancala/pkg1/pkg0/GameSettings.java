@@ -15,12 +15,33 @@ public class GameSettings {
     
     private static GameSettings INSTANCE;
     
+    public static Color DEFAULT_PLAYER_ONE_COLOR = new Color(153, 255, 255);
+    public static Color DEFAULT_PLAYER_TWO_COLOR = new Color(255, 153, 153);
+    
     private Color playerOneColor;
     private Color playerTwoColor;
+    private Boolean doRandomGame = true;
+    private Boolean firstMove = true;
+
+    public Boolean getFirstMove() {
+        return firstMove;
+    }
+
+    public void setFirstMove(Boolean firstMove) {
+        this.firstMove = firstMove;
+    }
+
+    public Boolean getDoRandomGame() {
+        return doRandomGame;
+    }
+
+    public void setDoRandomGame(Boolean doRandomGame) {
+        this.doRandomGame = doRandomGame;
+    }
     
     private GameSettings() {
-        playerOneColor = new Color(204,255,255);
-        playerTwoColor = new Color(255,204,204);
+        playerOneColor = DEFAULT_PLAYER_ONE_COLOR;
+        playerTwoColor = DEFAULT_PLAYER_TWO_COLOR;
     }
 
     public Color getPlayerOneColor() {

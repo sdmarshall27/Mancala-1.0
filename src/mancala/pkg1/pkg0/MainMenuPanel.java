@@ -37,7 +37,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
         titleLabel = new javax.swing.JLabel();
         menuButtonsPanel = new javax.swing.JPanel();
         playGameButton = new javax.swing.JButton();
-        howToPlayButton = new javax.swing.JButton();
+        aboutMancalaButton = new javax.swing.JButton();
         optionsButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
 
@@ -51,7 +51,7 @@ public class MainMenuPanel extends javax.swing.JPanel {
         menuTitlePanel.setLayout(menuTitlePanelLayout);
         menuTitlePanelLayout.setHorizontalGroup(
             menuTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
+            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1234, Short.MAX_VALUE)
         );
         menuTitlePanelLayout.setVerticalGroup(
             menuTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,14 +71,14 @@ public class MainMenuPanel extends javax.swing.JPanel {
         });
         menuButtonsPanel.add(playGameButton);
 
-        howToPlayButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        howToPlayButton.setText("How To Play");
-        howToPlayButton.addActionListener(new java.awt.event.ActionListener() {
+        aboutMancalaButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        aboutMancalaButton.setText("About Mancala");
+        aboutMancalaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                howToPlayButtonActionPerformed(evt);
+                aboutMancalaButtonActionPerformed(evt);
             }
         });
-        menuButtonsPanel.add(howToPlayButton);
+        menuButtonsPanel.add(aboutMancalaButton);
 
         optionsButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         optionsButton.setText("Options");
@@ -100,9 +100,9 @@ public class MainMenuPanel extends javax.swing.JPanel {
         this.mainFrame.playGame();
     }//GEN-LAST:event_playGameButtonActionPerformed
 
-    private void howToPlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_howToPlayButtonActionPerformed
+    private void aboutMancalaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMancalaButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_howToPlayButtonActionPerformed
+    }//GEN-LAST:event_aboutMancalaButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
@@ -110,8 +110,8 @@ public class MainMenuPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton aboutMancalaButton;
     private javax.swing.JButton exitButton;
-    private javax.swing.JButton howToPlayButton;
     private javax.swing.JPanel menuButtonsPanel;
     private javax.swing.JPanel menuTitlePanel;
     private javax.swing.JButton optionsButton;

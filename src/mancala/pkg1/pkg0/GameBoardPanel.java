@@ -6,6 +6,7 @@
 package mancala.pkg1.pkg0;
 
 import java.awt.Color;
+import java.util.Random;
 
 /**
  *
@@ -24,9 +25,23 @@ public class GameBoardPanel extends javax.swing.JPanel {
     public GameBoardPanel(MainFrame mainFrame) 
     {
         initComponents();
+        boolean firstMove;
+                
         this.mainFrame = mainFrame;
         mancalaGame = new MancalaGame();
+        
+        if(gameSettings.getDoRandomGame()) {
+            Random random = new Random();
+            firstMove = random.nextBoolean();
+        } else {
+            firstMove = gameSettings.getFirstMove();
+        }
+        
+        updatePlayerOneButtonState(firstMove);
+        updatePlayerTwoButtonState(!firstMove);
+        
         initializeDisplay();
+        
     }
     
     public void setMainFrame(MainFrame mainFrame)
@@ -381,6 +396,11 @@ public class GameBoardPanel extends javax.swing.JPanel {
         jPanel2.add(filler2);
 
         newGameButton.setText("New Game");
+        newGameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newGameButtonActionPerformed(evt);
+            }
+        });
         jPanel2.add(newGameButton);
 
         mainMenuButton.setText("Main Menu");
@@ -581,6 +601,11 @@ public class GameBoardPanel extends javax.swing.JPanel {
         mainFrame.remove(this);
         mainFrame.setMainMenu();
     }//GEN-LAST:event_mainMenuButtonActionPerformed
+
+    private void newGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameButtonActionPerformed
+        mainFrame.remove(this);
+        mainFrame.playGame();
+    }//GEN-LAST:event_newGameButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
