@@ -66,7 +66,6 @@ public class MainMenuPanel extends javax.swing.JPanel {
         jTextArea1.setText("Mancala is one of the oldest games still played today. Click on one of the pockets to move rocks counterclockwise throughout the board. If the rocks end in your bank, you get another turn. If the last rock is placed in an empty pocket on your side, you get to steal the rocks in the slot across from it. Go forth and save the world through the power of Mancala!");
         jTextArea1.setWrapStyleWord(true);
         jTextArea1.setFocusable(false);
-        jTextArea1.setHighlighter(null);
         jScrollPane1.setViewportView(jTextArea1);
 
         rulesPanel.add(jScrollPane1);
@@ -80,10 +79,9 @@ public class MainMenuPanel extends javax.swing.JPanel {
         jTextArea2.setColumns(20);
         jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
-        jTextArea2.setText("The Mancala Effect v1.0\n\nDeveloped By:\n\nus");
+        jTextArea2.setText("The Mancala Effect v1.0\n\nDeveloped By:\n\nTuan Dung, Glenn Gray, Nicholas Hazelton, Aniket Singh, Subham Singh, Steven Marshall, Sam Bartrug");
         jTextArea2.setWrapStyleWord(true);
         jTextArea2.setFocusable(false);
-        jTextArea2.setHighlighter(null);
         jScrollPane2.setViewportView(jTextArea2);
 
         applicationInfoPanel.add(jScrollPane2);

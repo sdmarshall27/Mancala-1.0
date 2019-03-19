@@ -63,9 +63,6 @@
                         <Property name="text" type="java.lang.String" value="Mancala is one of the oldest games still played today. Click on one of the pockets to move rocks counterclockwise throughout the board. If the rocks end in your bank, you get another turn. If the last rock is placed in an empty pocket on your side, you get to steal the rocks in the slot across from it. Go forth and save the world through the power of Mancala!"/>
                         <Property name="wrapStyleWord" type="boolean" value="true"/>
                         <Property name="focusable" type="boolean" value="false"/>
-                        <Property name="highlighter" type="javax.swing.text.Highlighter" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                          <ComponentRef name="null"/>
-                        </Property>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -104,12 +101,9 @@
                         <Property name="columns" type="int" value="20"/>
                         <Property name="lineWrap" type="boolean" value="true"/>
                         <Property name="rows" type="int" value="5"/>
-                        <Property name="text" type="java.lang.String" value="The Mancala Effect v1.0&#xa;&#xa;Developed By:&#xa;&#xa;us"/>
+                        <Property name="text" type="java.lang.String" value="The Mancala Effect v1.0&#xa;&#xa;Developed By:&#xa;&#xa;Tuan Dung, Glenn Gray, Nicholas Hazelton, Aniket Singh, Subham Singh, Steven Marshall, Sam Bartrug"/>
                         <Property name="wrapStyleWord" type="boolean" value="true"/>
                         <Property name="focusable" type="boolean" value="false"/>
-                        <Property name="highlighter" type="javax.swing.text.Highlighter" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                          <ComponentRef name="null"/>
-                        </Property>
                       </Properties>
                     </Component>
                   </SubComponents>

@@ -403,170 +403,135 @@ public class GameBoardPanel extends javax.swing.JPanel {
 
     private void p1PickButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton0ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(0, mancalaGame.getPlayerOne().slots.get(0));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+        updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){
-            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
-            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
     }//GEN-LAST:event_p1PickButton0ActionPerformed
 
     private void p1PickButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton1ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(1, mancalaGame.getPlayerOne().slots.get(1));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+        updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){
-            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
-            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
     }//GEN-LAST:event_p1PickButton1ActionPerformed
 
     private void p1PickButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton2ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(2, mancalaGame.getPlayerOne().slots.get(2));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+        updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){
-            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
-            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
     }//GEN-LAST:event_p1PickButton2ActionPerformed
 
     private void p1PickButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton3ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(3, mancalaGame.getPlayerOne().slots.get(3));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+        updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){
-            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
-            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
     }//GEN-LAST:event_p1PickButton3ActionPerformed
 
     private void p1PickButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton4ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(4, mancalaGame.getPlayerOne().slots.get(4));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+        updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){
-            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
-            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
     }//GEN-LAST:event_p1PickButton4ActionPerformed
 
     private void p1PickButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton5ActionPerformed
         mancalaGame.getPlayerOne().moveStonesAround(5, mancalaGame.getPlayerOne().slots.get(5));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
+        updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){
-            updatePlayerOneButtonState(mancalaGame.getPlayerOne().getBonusTurn());
-            updatePlayerTwoButtonState(!mancalaGame.getPlayerOne().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
     }//GEN-LAST:event_p1PickButton5ActionPerformed
 
     private void p2PickButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton0ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(0, mancalaGame.getPlayerTwo().slots.get(0));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+        updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){    
-            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
         
     }//GEN-LAST:event_p2PickButton0ActionPerformed
 
     private void p2PickButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton1ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(1, mancalaGame.getPlayerTwo().slots.get(1));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+        updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){    
-            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
     }//GEN-LAST:event_p2PickButton1ActionPerformed
 
     private void p2PickButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton3ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(3, mancalaGame.getPlayerTwo().slots.get(3));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+        updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){    
-            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
     }//GEN-LAST:event_p2PickButton3ActionPerformed
 
     private void p2PickButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton4ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(4, mancalaGame.getPlayerTwo().slots.get(4));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+        updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){    
-            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
     }//GEN-LAST:event_p2PickButton4ActionPerformed
 
     private void p2PickButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton5ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(5, mancalaGame.getPlayerTwo().slots.get(5));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+        updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){    
-            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
     }//GEN-LAST:event_p2PickButton5ActionPerformed
 
     private void p2PickButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton2ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(2, mancalaGame.getPlayerTwo().slots.get(2));
+        updateStonesForPlayerOne();
+        updateStonesForPlayerTwo();
+        updateP1Score();
+        updateP2Score();
+        updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
+        updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
         displayWinner();
-        if(!displayWinner()){
-            updatePlayerOneButtonState(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updatePlayerTwoButtonState(mancalaGame.getPlayerTwo().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-
     }//GEN-LAST:event_p2PickButton2ActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed

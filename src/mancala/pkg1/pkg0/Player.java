@@ -43,27 +43,33 @@ public class Player {
     
     public void moveStonesAround(int position, Slot slot){
         int opponentPosition = 0;
+        Slot tempSlot = new Slot();
+        tempSlot.cleanStones();
+        for(int i = 0; i < slot.countStones(); i++){
+            Stone stone = new Stone();
+            tempSlot.addStone(stone);
+        }
         if(this.slots.get(position).countStones() != 0){
-            for (int i = 0; i < slot.countStones(); i++){
+            slot.cleanStones();
+            for (int i = 0; i < tempSlot.countStones(); i++){
                 if(position < 6){
                     position++;
-                    addStoneToSlot(position, slot.getStoneByIndex(i));
-                    setBonusTurn(i, slot.countStones(), position);
+                    addStoneToSlot(position, tempSlot.getStoneByIndex(i));
+                    setBonusTurn(i, tempSlot.countStones(), position);
                 } else if(position == 6) {
                     if(opponentPosition < 6){
-                        opponent.addStoneToSlot(opponentPosition, slot.getStoneByIndex(i));
+                        opponent.addStoneToSlot(opponentPosition, tempSlot.getStoneByIndex(i));
                         opponentPosition++;
                     } else if(opponentPosition == 6) {
                         position = 0;
-                        addStoneToSlot(position, slot.getStoneByIndex(i));
-                        //position++;
+                        addStoneToSlot(position, tempSlot.getStoneByIndex(i));
                     }    
                 }
                 
             }
             winningStones(position);
             isEndGame();
-            slot.cleanStones();
+            
         } else bonusTurn = true;
 
         
@@ -99,13 +105,13 @@ public class Player {
     }
     
     public  void setBonusTurn(int index, int count, int position){
-        
-
-        if(index == count - 1 && position == 6){
+        isEndGame();
+        if(!getEndGame()){
+            if(index == count - 1 && position == 6){
             this.bonusTurn = true;
-        }else this.bonusTurn = false; 
-        
-        
+            }else this.bonusTurn = false; 
+        }
+
     }
 
     public Boolean getBonusTurn() {
