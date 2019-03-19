@@ -5,21 +5,26 @@
  */
 package mancala.pkg1.pkg0;
 
+import java.awt.Color;
+
 /**
  *
  * @author Dung T Nguyen
  */
-public class Game extends javax.swing.JPanel {
+public class GameBoardPanel extends javax.swing.JPanel {
 
     private MainFrame mainBoard;
     private MancalaGame mancalaGame;
     private int scoreP1;
     private int scoreP2;
+    
+    private GameSettings gameSettings = GameSettings.getInstance();
 
     
-    public Game() 
+    public GameBoardPanel() 
     {
         initComponents();
+        updatePlayerColors();
     }
     
     public void setMainBoard(MainFrame mainBoard)
@@ -40,18 +45,17 @@ public class Game extends javax.swing.JPanel {
             success = true;
             
             if(this.scoreP1 > this.scoreP2){
-                this.winner.setText("Winner: Player One");
-                updateButtonsP1(false);
-                updateButtonsP2(false);
+                this.winnerLabel.setText("A Winner is PLAYER ONE");
+                this.winnerLabel.setForeground(gameSettings.getPlayerOneColor());
             } else if(this.scoreP1 < this.scoreP2){
-                this.winner.setText("Winner: Player Two");
-                updateButtonsP1(false);
-                updateButtonsP2(false);
-            } else if(this.scoreP1 == this.scoreP2){
-                this.winner.setText("Draw Game");
-                updateButtonsP1(false);
-                updateButtonsP2(false);
+                this.winnerLabel.setText("A Winner is PLAYER TWO");
+                this.winnerLabel.setForeground(gameSettings.getPlayerTwoColor());
+            } else {
+                this.winnerLabel.setText("Draw Game");
             }
+            
+            updateButtonsP1(false);
+            updateButtonsP2(false);            
         }
         return success;
     }
@@ -100,7 +104,7 @@ public class Game extends javax.swing.JPanel {
         for(int i = 0; i < 7; i++ ){
             scoreP1 += mancalaGame.getPlayerOne().slots.get(i).countStones();
         }
-        this.p1Score.setText("" + this.scoreP1);
+        this.playerOneScoreLabel.setText("" + this.scoreP1);
     }
     
     public void updateP2Score(){
@@ -108,7 +112,7 @@ public class Game extends javax.swing.JPanel {
         for(int i = 0; i < 7; i++ ){
             scoreP2 += mancalaGame.getPlayerTwo().slots.get(i).countStones();
         }
-        this.p2Score.setText("" + this.scoreP2);
+        this.playerTwoScoreLabel.setText("" + this.scoreP2);
     }
     
     
@@ -117,193 +121,117 @@ public class Game extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Score = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
-        jPanel20 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel19 = new javax.swing.JPanel();
-        p1Score = new javax.swing.JLabel();
-        jPanel18 = new javax.swing.JPanel();
-        p2Score = new javax.swing.JLabel();
-        jPanel17 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        winner = new javax.swing.JLabel();
+        headsUpDisplayPanel = new javax.swing.JPanel();
+        scorePanel = new javax.swing.JPanel();
+        playerTwoTextLabel = new javax.swing.JLabel();
+        playerTwoScoreLabel = new javax.swing.JLabel();
+        playerOneScoreLabel = new javax.swing.JLabel();
+        playerOneTextLabel = new javax.swing.JLabel();
+        winnerPanel = new javax.swing.JPanel();
+        winnerLabel = new javax.swing.JLabel();
         playerOneBank = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         p1Slot6 = new javax.swing.JLabel();
         playerTwoBank = new javax.swing.JPanel();
         p2Slot6 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
         playerSlots = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        playerTwoButtonsPanel = new javax.swing.JPanel();
         p2PickButton5 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
         p2PickButton4 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
         p2PickButton3 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
         p2PickButton2 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
         p2PickButton1 = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
         p2PickButton0 = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
+        playerButtonsSpacerPanel = new javax.swing.JPanel();
+        playerOneButtonsPanel = new javax.swing.JPanel();
         p1PickButton0 = new javax.swing.JButton();
-        jPanel10 = new javax.swing.JPanel();
         p1PickButton1 = new javax.swing.JButton();
-        jPanel11 = new javax.swing.JPanel();
         p1PickButton2 = new javax.swing.JButton();
-        jPanel12 = new javax.swing.JPanel();
         p1PickButton3 = new javax.swing.JButton();
-        jPanel14 = new javax.swing.JPanel();
         p1PickButton4 = new javax.swing.JButton();
-        jPanel16 = new javax.swing.JPanel();
         p1PickButton5 = new javax.swing.JButton();
+        gameActionPanel = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        newGameButton = new javax.swing.JButton();
+        mainMenuButton = new javax.swing.JButton();
+        exitButton = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
 
+        setPreferredSize(new java.awt.Dimension(700, 500));
         setLayout(new java.awt.BorderLayout());
 
-        Score.setLayout(new java.awt.GridLayout(2, 4));
+        headsUpDisplayPanel.setLayout(new java.awt.GridLayout(2, 4));
 
-        jPanel15.setLayout(new java.awt.GridLayout(1, 4));
+        scorePanel.setBackground(new java.awt.Color(153, 153, 153));
+        scorePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        scorePanel.setLayout(new java.awt.GridLayout(1, 4));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PLAYER ONE");
+        playerTwoTextLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        playerTwoTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        playerTwoTextLabel.setText("PLAYER TWO");
+        scorePanel.add(playerTwoTextLabel);
 
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+        playerTwoScoreLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        playerTwoScoreLabel.setText("0");
+        scorePanel.add(playerTwoScoreLabel);
+
+        playerOneScoreLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        playerOneScoreLabel.setText("0");
+        scorePanel.add(playerOneScoreLabel);
+
+        playerOneTextLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        playerOneTextLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        playerOneTextLabel.setText("PLAYER ONE");
+        scorePanel.add(playerOneTextLabel);
+
+        headsUpDisplayPanel.add(scorePanel);
+
+        winnerLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        winnerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout winnerPanelLayout = new javax.swing.GroupLayout(winnerPanel);
+        winnerPanel.setLayout(winnerPanelLayout);
+        winnerPanelLayout.setHorizontalGroup(
+            winnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(winnerLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        jPanel15.add(jPanel20);
-
-        p1Score.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        p1Score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        p1Score.setText("0");
-
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(p1Score, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-        );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(p1Score, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        jPanel15.add(jPanel19);
-
-        p2Score.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        p2Score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        p2Score.setText("0");
-
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(p2Score, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-        );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(p2Score, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+        winnerPanelLayout.setVerticalGroup(
+            winnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(winnerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
         );
 
-        jPanel15.add(jPanel18);
+        headsUpDisplayPanel.add(winnerPanel);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("PLAYER TWO");
+        add(headsUpDisplayPanel, java.awt.BorderLayout.PAGE_START);
 
-        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
-        jPanel17.setLayout(jPanel17Layout);
-        jPanel17Layout.setHorizontalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-        );
-        jPanel17Layout.setVerticalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        jPanel15.add(jPanel17);
-
-        Score.add(jPanel15);
-
-        winner.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        winner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(winner, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 872, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(winner, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-        );
-
-        Score.add(jPanel13);
-
-        add(Score, java.awt.BorderLayout.PAGE_START);
-
-        playerOneBank.setLayout(new java.awt.GridLayout(2, 0));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 96, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 268, Short.MAX_VALUE)
-        );
-
-        playerOneBank.add(jPanel1);
+        playerOneBank.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        playerOneBank.setPreferredSize(new java.awt.Dimension(73, 29));
+        playerOneBank.setLayout(new java.awt.GridLayout(1, 1));
 
         p1Slot6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         p1Slot6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         p1Slot6.setText("bank1");
-        p1Slot6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         playerOneBank.add(p1Slot6);
 
         add(playerOneBank, java.awt.BorderLayout.LINE_END);
 
-        playerTwoBank.setLayout(new java.awt.GridLayout(2, 1));
+        playerTwoBank.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        playerTwoBank.setPreferredSize(new java.awt.Dimension(73, 29));
+        playerTwoBank.setLayout(new java.awt.GridLayout(1, 1));
 
         p2Slot6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         p2Slot6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         p2Slot6.setText("jLabel2");
-        p2Slot6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         playerTwoBank.add(p2Slot6);
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 97, Short.MAX_VALUE)
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 268, Short.MAX_VALUE)
-        );
-
-        playerTwoBank.add(jPanel8);
 
         add(playerTwoBank, java.awt.BorderLayout.LINE_START);
 
-        playerSlots.setLayout(new java.awt.GridLayout(2, 6));
+        playerSlots.setLayout(new java.awt.GridLayout(3, 1));
 
-        jPanel2.setLayout(new java.awt.GridLayout(2, 1));
+        playerTwoButtonsPanel.setLayout(new java.awt.GridLayout(1, 0));
 
         p2PickButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p2PickButton5.setText("Pick");
@@ -312,11 +240,7 @@ public class Game extends javax.swing.JPanel {
                 p2PickButton5ActionPerformed(evt);
             }
         });
-        jPanel2.add(p2PickButton5);
-
-        playerSlots.add(jPanel2);
-
-        jPanel3.setLayout(new java.awt.GridLayout(2, 1));
+        playerTwoButtonsPanel.add(p2PickButton5);
 
         p2PickButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p2PickButton4.setText("Pick");
@@ -325,11 +249,7 @@ public class Game extends javax.swing.JPanel {
                 p2PickButton4ActionPerformed(evt);
             }
         });
-        jPanel3.add(p2PickButton4);
-
-        playerSlots.add(jPanel3);
-
-        jPanel4.setLayout(new java.awt.GridLayout(2, 1));
+        playerTwoButtonsPanel.add(p2PickButton4);
 
         p2PickButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p2PickButton3.setText("Pick");
@@ -338,11 +258,7 @@ public class Game extends javax.swing.JPanel {
                 p2PickButton3ActionPerformed(evt);
             }
         });
-        jPanel4.add(p2PickButton3);
-
-        playerSlots.add(jPanel4);
-
-        jPanel5.setLayout(new java.awt.GridLayout(2, 1));
+        playerTwoButtonsPanel.add(p2PickButton3);
 
         p2PickButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p2PickButton2.setText("Pick");
@@ -351,11 +267,7 @@ public class Game extends javax.swing.JPanel {
                 p2PickButton2ActionPerformed(evt);
             }
         });
-        jPanel5.add(p2PickButton2);
-
-        playerSlots.add(jPanel5);
-
-        jPanel7.setLayout(new java.awt.GridLayout(2, 1));
+        playerTwoButtonsPanel.add(p2PickButton2);
 
         p2PickButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p2PickButton1.setText("Pick");
@@ -364,11 +276,7 @@ public class Game extends javax.swing.JPanel {
                 p2PickButton1ActionPerformed(evt);
             }
         });
-        jPanel7.add(p2PickButton1);
-
-        playerSlots.add(jPanel7);
-
-        jPanel6.setLayout(new java.awt.GridLayout(2, 1));
+        playerTwoButtonsPanel.add(p2PickButton1);
 
         p2PickButton0.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p2PickButton0.setText("Pick");
@@ -377,11 +285,24 @@ public class Game extends javax.swing.JPanel {
                 p2PickButton0ActionPerformed(evt);
             }
         });
-        jPanel6.add(p2PickButton0);
+        playerTwoButtonsPanel.add(p2PickButton0);
 
-        playerSlots.add(jPanel6);
+        playerSlots.add(playerTwoButtonsPanel);
 
-        jPanel9.setLayout(new java.awt.GridLayout(2, 1));
+        javax.swing.GroupLayout playerButtonsSpacerPanelLayout = new javax.swing.GroupLayout(playerButtonsSpacerPanel);
+        playerButtonsSpacerPanel.setLayout(playerButtonsSpacerPanelLayout);
+        playerButtonsSpacerPanelLayout.setHorizontalGroup(
+            playerButtonsSpacerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 554, Short.MAX_VALUE)
+        );
+        playerButtonsSpacerPanelLayout.setVerticalGroup(
+            playerButtonsSpacerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 86, Short.MAX_VALUE)
+        );
+
+        playerSlots.add(playerButtonsSpacerPanel);
+
+        playerOneButtonsPanel.setLayout(new java.awt.GridLayout(1, 0));
 
         p1PickButton0.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p1PickButton0.setText("Pick");
@@ -390,11 +311,7 @@ public class Game extends javax.swing.JPanel {
                 p1PickButton0ActionPerformed(evt);
             }
         });
-        jPanel9.add(p1PickButton0);
-
-        playerSlots.add(jPanel9);
-
-        jPanel10.setLayout(new java.awt.GridLayout(2, 1));
+        playerOneButtonsPanel.add(p1PickButton0);
 
         p1PickButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p1PickButton1.setText("Pick");
@@ -403,11 +320,7 @@ public class Game extends javax.swing.JPanel {
                 p1PickButton1ActionPerformed(evt);
             }
         });
-        jPanel10.add(p1PickButton1);
-
-        playerSlots.add(jPanel10);
-
-        jPanel11.setLayout(new java.awt.GridLayout(2, 1));
+        playerOneButtonsPanel.add(p1PickButton1);
 
         p1PickButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p1PickButton2.setText("Pick");
@@ -416,11 +329,7 @@ public class Game extends javax.swing.JPanel {
                 p1PickButton2ActionPerformed(evt);
             }
         });
-        jPanel11.add(p1PickButton2);
-
-        playerSlots.add(jPanel11);
-
-        jPanel12.setLayout(new java.awt.GridLayout(2, 1));
+        playerOneButtonsPanel.add(p1PickButton2);
 
         p1PickButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p1PickButton3.setText("Pick");
@@ -429,11 +338,7 @@ public class Game extends javax.swing.JPanel {
                 p1PickButton3ActionPerformed(evt);
             }
         });
-        jPanel12.add(p1PickButton3);
-
-        playerSlots.add(jPanel12);
-
-        jPanel14.setLayout(new java.awt.GridLayout(2, 1));
+        playerOneButtonsPanel.add(p1PickButton3);
 
         p1PickButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p1PickButton4.setText("Pick");
@@ -442,11 +347,7 @@ public class Game extends javax.swing.JPanel {
                 p1PickButton4ActionPerformed(evt);
             }
         });
-        jPanel14.add(p1PickButton4);
-
-        playerSlots.add(jPanel14);
-
-        jPanel16.setLayout(new java.awt.GridLayout(2, 1));
+        playerOneButtonsPanel.add(p1PickButton4);
 
         p1PickButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         p1PickButton5.setText("Pick");
@@ -455,11 +356,52 @@ public class Game extends javax.swing.JPanel {
                 p1PickButton5ActionPerformed(evt);
             }
         });
-        jPanel16.add(p1PickButton5);
+        playerOneButtonsPanel.add(p1PickButton5);
 
-        playerSlots.add(jPanel16);
+        playerSlots.add(playerOneButtonsPanel);
 
         add(playerSlots, java.awt.BorderLayout.CENTER);
+
+        gameActionPanel.setMinimumSize(new java.awt.Dimension(0, 126));
+        gameActionPanel.setPreferredSize(new java.awt.Dimension(872, 126));
+        gameActionPanel.setLayout(new java.awt.GridLayout(2, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 700, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 63, Short.MAX_VALUE)
+        );
+
+        gameActionPanel.add(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 3));
+        jPanel2.add(filler2);
+
+        newGameButton.setText("New Game");
+        jPanel2.add(newGameButton);
+
+        mainMenuButton.setText("Main Menu");
+        jPanel2.add(mainMenuButton);
+
+        exitButton.setText("Exit");
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(exitButton);
+        jPanel2.add(filler1);
+
+        gameActionPanel.add(jPanel2);
+
+        add(gameActionPanel, java.awt.BorderLayout.PAGE_END);
     }// </editor-fold>//GEN-END:initComponents
 
     private void p1PickButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1PickButton0ActionPerformed
@@ -574,20 +516,6 @@ public class Game extends javax.swing.JPanel {
         
     }//GEN-LAST:event_p2PickButton1ActionPerformed
 
-    private void p2PickButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton2ActionPerformed
-        mancalaGame.getPlayerTwo().moveStonesAround(2, mancalaGame.getPlayerTwo().slots.get(2));
-        getWinner();
-        if(!getWinner()){    
-            updateButtonsP1(!mancalaGame.getPlayerTwo().getBonusTurn());
-            updateButtonsP2(mancalaGame.getPlayerTwo().getBonusTurn());
-            updateStonesForPlayerOne();
-            updateStonesForPlayerTwo();
-            updateP1Score();
-            updateP2Score();
-        }
-        
-    }//GEN-LAST:event_p2PickButton2ActionPerformed
-
     private void p2PickButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton3ActionPerformed
         mancalaGame.getPlayerTwo().moveStonesAround(3, mancalaGame.getPlayerTwo().slots.get(3));
         getWinner();
@@ -630,38 +558,41 @@ public class Game extends javax.swing.JPanel {
         
     }//GEN-LAST:event_p2PickButton5ActionPerformed
 
+    private void p2PickButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2PickButton2ActionPerformed
+        mancalaGame.getPlayerTwo().moveStonesAround(2, mancalaGame.getPlayerTwo().slots.get(2));
+        getWinner();
+        if(!getWinner()){
+            updateButtonsP1(!mancalaGame.getPlayerTwo().getBonusTurn());
+            updateButtonsP2(mancalaGame.getPlayerTwo().getBonusTurn());
+            updateStonesForPlayerOne();
+            updateStonesForPlayerTwo();
+            updateP1Score();
+            updateP2Score();
+        }
+
+    }//GEN-LAST:event_p2PickButton2ActionPerformed
+
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Score;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton exitButton;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.JPanel gameActionPanel;
+    private javax.swing.JPanel headsUpDisplayPanel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JButton mainMenuButton;
+    private javax.swing.JButton newGameButton;
     private javax.swing.JButton p1PickButton0;
     private javax.swing.JButton p1PickButton1;
     private javax.swing.JButton p1PickButton2;
     private javax.swing.JButton p1PickButton3;
     private javax.swing.JButton p1PickButton4;
     private javax.swing.JButton p1PickButton5;
-    private javax.swing.JLabel p1Score;
     private javax.swing.JLabel p1Slot6;
     private javax.swing.JButton p2PickButton0;
     private javax.swing.JButton p2PickButton1;
@@ -669,11 +600,53 @@ public class Game extends javax.swing.JPanel {
     private javax.swing.JButton p2PickButton3;
     private javax.swing.JButton p2PickButton4;
     private javax.swing.JButton p2PickButton5;
-    private javax.swing.JLabel p2Score;
     private javax.swing.JLabel p2Slot6;
+    private javax.swing.JPanel playerButtonsSpacerPanel;
     private javax.swing.JPanel playerOneBank;
+    private javax.swing.JPanel playerOneButtonsPanel;
+    private javax.swing.JLabel playerOneScoreLabel;
+    private javax.swing.JLabel playerOneTextLabel;
     private javax.swing.JPanel playerSlots;
     private javax.swing.JPanel playerTwoBank;
-    private javax.swing.JLabel winner;
+    private javax.swing.JPanel playerTwoButtonsPanel;
+    private javax.swing.JLabel playerTwoScoreLabel;
+    private javax.swing.JLabel playerTwoTextLabel;
+    private javax.swing.JPanel scorePanel;
+    private javax.swing.JLabel winnerLabel;
+    private javax.swing.JPanel winnerPanel;
     // End of variables declaration//GEN-END:variables
+
+    private void updatePlayerColors() {
+        Color playerTwoColor = gameSettings.getPlayerTwoColor();
+        Color playerOneColor = gameSettings.getPlayerOneColor();
+        
+        
+        updatePlayerTwoButtonColors(playerTwoColor);    
+        playerTwoBank.setBackground(playerTwoColor);
+        playerTwoTextLabel.setForeground(playerTwoColor);
+        playerTwoScoreLabel.setForeground(playerTwoColor);
+        
+        updatePlayerOneButtonColors(playerOneColor);
+        playerOneBank.setBackground(playerOneColor);
+        playerOneTextLabel.setForeground(playerOneColor);
+        playerOneScoreLabel.setForeground(playerOneColor);
+    }
+
+    private void updatePlayerTwoButtonColors(Color playerTwoColor) {
+        p2PickButton0.setBackground(playerTwoColor);
+        p2PickButton1.setBackground(playerTwoColor);
+        p2PickButton2.setBackground(playerTwoColor);
+        p2PickButton3.setBackground(playerTwoColor);
+        p2PickButton4.setBackground(playerTwoColor);
+        p2PickButton5.setBackground(playerTwoColor);
+    }
+
+    private void updatePlayerOneButtonColors(Color playerOneColor) {
+        p1PickButton0.setBackground(playerOneColor);
+        p1PickButton1.setBackground(playerOneColor);
+        p1PickButton2.setBackground(playerOneColor);
+        p1PickButton3.setBackground(playerOneColor);
+        p1PickButton4.setBackground(playerOneColor);
+        p1PickButton5.setBackground(playerOneColor);
+    }
 }

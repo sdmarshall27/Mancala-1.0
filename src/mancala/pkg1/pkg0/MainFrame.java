@@ -6,7 +6,7 @@
 package mancala.pkg1.pkg0;
 
 import java.awt.BorderLayout;
-import mancala.pkg1.pkg0.Game;
+import mancala.pkg1.pkg0.GameBoardPanel;
 import mancala.pkg1.pkg0.MancalaGame;
 
 /**
@@ -16,7 +16,7 @@ import mancala.pkg1.pkg0.MancalaGame;
 public class MainFrame extends javax.swing.JFrame {
     private MancalaGame mancalaGame;
     private MainMenuPanel mainMenu;
-    private Game game;
+    private GameBoardPanel game;
     
     public MainFrame() {
         initComponents();
@@ -33,7 +33,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     public void gameConstructor(){
-        this.game = new Game();
+        this.game = new GameBoardPanel();
         this.game.setMainBoard(this);
         this.game.setMancalaGame(mancalaGame);
         this.game.updateStonesForPlayerOne();
@@ -92,6 +92,8 @@ public class MainFrame extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
